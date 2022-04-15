@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class RealtimeCurrencyExchangeRate {
-    private String From_Currency_Code;
+    private String fromCurrencyCode;
     private String From_Currency_Name;
     private String To_Currency_Code;
     private String To_Currency_Name;
@@ -28,7 +28,7 @@ public class RealtimeCurrencyExchangeRate {
                     String time_Zone,
                     String bid_Price,
                     String ask_Price) {
-        From_Currency_Code = from_Currency_Code;
+        fromCurrencyCode = from_Currency_Code;
         From_Currency_Name = from_Currency_Name;
         To_Currency_Code = to_Currency_Code;
         To_Currency_Name = to_Currency_Name;
@@ -39,12 +39,12 @@ public class RealtimeCurrencyExchangeRate {
         Ask_Price = ask_Price;
     }
 
-    public String getFrom_Currency_Code() {
-        return From_Currency_Code;
+    public String getFromCurrencyCode() {
+        return fromCurrencyCode;
     }
 
-    public void setFrom_Currency_Code(String from_Currency_Code) {
-        From_Currency_Code = from_Currency_Code;
+    public void setFromCurrencyCode(String fromCurrencyCode) {
+        this.fromCurrencyCode = fromCurrencyCode;
     }
 
     public String getFrom_Currency_Name() {
@@ -114,7 +114,7 @@ public class RealtimeCurrencyExchangeRate {
     @Override
     public String toString() {
         return "Курс обмена валюты в реальном времени:\n" +
-                "Из какой валюты (Кодовое представление) = " + From_Currency_Code +"\n" +
+                "Из какой валюты (Кодовое представление) = " + fromCurrencyCode +"\n" +
                 "Из какой валюты (Название) = " + From_Currency_Name + "\n" +
                 "В какую валюту (Кодовое представление) = " + To_Currency_Code + "\n" +
                 "В какую валюту (Название) = " + To_Currency_Name + "\n" +
@@ -129,7 +129,7 @@ public class RealtimeCurrencyExchangeRate {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode rootNode = mapper.readValue(response,JsonNode.class);
         JsonNode childNode = rootNode.get("Realtime Currency Exchange Rate");
-        setFrom_Currency_Code(childNode.get("1. From_Currency Code").asText());
+        setFromCurrencyCode(childNode.get("1. From_Currency Code").asText());
         setFrom_Currency_Name(childNode.get("2. From_Currency Name").asText());
         setTo_Currency_Code(childNode.get("3. To_Currency Code").asText());
         setTo_Currency_Name(childNode.get("4. To_Currency Name").asText());
@@ -137,7 +137,7 @@ public class RealtimeCurrencyExchangeRate {
         setLast_Refreshed(childNode.get("6. Last Refreshed").asText());
         setTime_Zone(childNode.get("7. Time Zone").asText());
         setBid_Price(childNode.get("8. Bid Price").asText());
-        setAsk_Price(childNode.get("9. Ask Price").asText());
+        setAsk_Price(childNode.get("9. Ask Price").asText()); //TODO: asDouble()?
     }
 
     public void printBidAsk(){

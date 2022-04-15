@@ -1,10 +1,9 @@
-package FindWord;
+package findword;
 
-import FindWord.MyWordsCollection;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
 
 
 class MyWordsCollectionTest {
@@ -26,21 +25,20 @@ class MyWordsCollectionTest {
         MyWordsCollection resultCollection = new MyWordsCollection();
         resultCollection.fillCollectionTestWords();
 
-        Assertions.assertEquals(originalCollection.getMyCollection(), resultCollection.getMyCollection());
+        assertEquals(originalCollection.getMyCollection(), resultCollection.getMyCollection());
     }
 
     @Test
     void addWordTest() {
         originalCollection.add("Darya");
         boolean expected = originalCollection.getMyCollection().contains("Darya");
-        Assertions.assertTrue(expected);
+        assertTrue(expected);
 
     }   @Test
     void delWordTest() {
         originalCollection.del("Вася");
         boolean expected = originalCollection.getMyCollection().contains("Vasia");
-        Assertions.assertFalse(expected);
-
+        assertFalse(expected);
     }
 
 }

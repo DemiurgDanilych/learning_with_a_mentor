@@ -3,12 +3,12 @@ package ComputerWarehouse;
 public class Computer {
     private String videocard;
     private String powerBlock;
-    private String Mother;
+    private String mother;
 
     public Computer(String videocard, String powerBlock, String mother) {
         this.videocard = videocard;
         this.powerBlock = powerBlock;
-        Mother = mother;
+        this.mother = mother;
     }
 
     public String getVideocard() {
@@ -28,11 +28,11 @@ public class Computer {
     }
 
     public String getMother() {
-        return Mother;
+        return mother;
     }
 
     public void setMother(String mother) {
-        Mother = mother;
+        this.mother = mother;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class Computer {
         return "Computer{" +
                 "videocard='" + videocard + '\'' +
                 ", powerBlock='" + powerBlock + '\'' +
-                ", Mother='" + Mother + '\'' +
+                ", Mother='" + mother + '\'' +
                 '}';
     }
 }
