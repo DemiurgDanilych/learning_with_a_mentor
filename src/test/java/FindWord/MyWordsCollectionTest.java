@@ -1,4 +1,4 @@
-//package FindWord;
+package FindWord;
 
 import FindWord.MyWordsCollection;
 import org.junit.jupiter.api.Assertions;
