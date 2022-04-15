@@ -1,4 +1,4 @@
-package AlphavantageBTCInCNY;
+package AlphavantageUSDInJPY;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,21 +16,21 @@ public class Main {
         connection.setConnectTimeout(3000);
         connection.setReadTimeout(5000);
 
-
-        InputStreamReader inputStream = new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8);
-        BufferedReader bufferedReader = new BufferedReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(
+                new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));
 
         StringBuilder responseBuilder = new StringBuilder();
         String line;
 
-        while((line = bufferedReader.readLine()) != null){
+        while ((line = bufferedReader.readLine()) != null) {
             responseBuilder.append(line);
         }
-        bufferedReader.close();
 
         String response = responseBuilder.toString();
-        System.out.println(response);
 
+        RealtimeCurrencyExchangeRate obj = new RealtimeCurrencyExchangeRate();
+        obj.createObj(response);
+        obj.printBidAsk();
     }
 }
 
