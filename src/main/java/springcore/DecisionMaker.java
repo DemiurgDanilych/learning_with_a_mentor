@@ -2,7 +2,7 @@ package springcore;
 
 public class DecisionMaker {
 
-    private WeatherForecastProvider weatherForecastProvider;
+    private final WeatherForecastProvider weatherForecastProvider;
 
     public DecisionMaker(WeatherForecastProvider weatherForecastProvider) {
         this.weatherForecastProvider = weatherForecastProvider;

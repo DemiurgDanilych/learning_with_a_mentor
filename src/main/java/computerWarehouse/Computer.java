@@ -1,4 +1,4 @@
-package ComputerWarehouse;
+package computerWarehouse;
 
 public class Computer {
     private String videocard;

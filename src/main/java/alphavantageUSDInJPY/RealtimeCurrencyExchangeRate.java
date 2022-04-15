@@ -1,4 +1,4 @@
-package AlphavantageUSDInJPY;
+package alphavantageUSDInJPY;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -113,16 +113,16 @@ public class RealtimeCurrencyExchangeRate {
 
     @Override
     public String toString() {
-        return "Курс обмена валюты в реальном времени:\n" +
-                "Из какой валюты (Кодовое представление) = " + fromCurrencyCode +"\n" +
-                "Из какой валюты (Название) = " + From_Currency_Name + "\n" +
-                "В какую валюту (Кодовое представление) = " + To_Currency_Code + "\n" +
-                "В какую валюту (Название) = " + To_Currency_Name + "\n" +
-                "Курс обмена = " + Exchange_Rate + "\n" +
-                "Последнее обновление = " + Last_Refreshed + "\n" +
-                "Временная зона = " + Time_Zone + "\n" +
-                "Предложенная цена = " + Bid_Price + "\n" +
-                "Запрашиваемая цена = " + Ask_Price + "\n";
+        return "Realtime Currency Exchange Rate:\n" +
+                "From_Currency Code = " + fromCurrencyCode +"\n" +
+                "From_Currency Name = " + From_Currency_Name + "\n" +
+                "To_Currency Code = " + To_Currency_Code + "\n" +
+                "To_Currency Name = " + To_Currency_Name + "\n" +
+                "Exchange Rate = " + Exchange_Rate + "\n" +
+                "Last Refreshed = " + Last_Refreshed + "\n" +
+                "Time Zone = " + Time_Zone + "\n" +
+                "Bid Price = " + Bid_Price + "\n" +
+                "Ask Price = " + Ask_Price + "\n";
     }
 
     public void createObj(String response) throws JsonProcessingException {
@@ -141,9 +141,9 @@ public class RealtimeCurrencyExchangeRate {
     }
 
     public void printBidAsk(){
-        System.out.println("Курс обмена валюты в реальном времени:\n"
-                + "Обмениваем " + getFrom_Currency_Name() + " на " + getTo_Currency_Name() + "\n"
-                + "Предложенная цена = " + Bid_Price + "\n"
-                + "Запрашиваемая цена = " + Ask_Price);
+        System.out.println("Realtime Currency Exchange Rate:\n"
+                + "From_Currency Name " + getFrom_Currency_Name() + " for " + getTo_Currency_Name() + "\n"
+                + "Bid Price = " + Bid_Price + "\n"
+                + "Ask Price = " + Ask_Price);
     }
 }

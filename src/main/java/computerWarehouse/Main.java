@@ -1,4 +1,4 @@
-package ComputerWarehouse;
+package computerWarehouse;
 
 import java.util.ArrayList;
 import java.util.List;

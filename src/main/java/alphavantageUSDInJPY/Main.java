@@ -1,4 +1,4 @@
-package AlphavantageUSDInJPY;
+package alphavantageUSDInJPY;
 
 import java.io.BufferedReader;
 import java.io.IOException;
