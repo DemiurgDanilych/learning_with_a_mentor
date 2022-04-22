@@ -1,20 +1,20 @@
-package computerWarehouse;
+ package computerWarehouse;
 
 public class Computer {
-    private Components videocard;
-    private Components powerblock;
+    private Components videoCard;
+    private Components powerBlock;
     private Components mother;
     private double price;
 
 
     public Computer(){}
 
-    public Computer(VideoCard videocard, PowerBlock powerBlock, Mother mother) {
-        this.videocard = videocard;
-        this.powerblock = powerBlock;
+    public Computer(Components videoCard, Components powerBlock, Components mother) {
+        this.videoCard = videoCard;
+        this.powerBlock = powerBlock;
         this.mother = mother;
         IEvaluator evaluatorComputer = new EvaluatorComputer();
-        this.price = evaluatorComputer.sum(videocard,powerblock,mother);
+        this.price = evaluatorComputer.sum(videoCard,powerBlock,mother);
     }
 
 
@@ -25,8 +25,8 @@ public class Computer {
     @Override
     public String toString() {
         return "Computer{" +
-                "videocard=" + videocard +
-                ", powerblock=" + powerblock +
+                "videocard=" + videoCard +
+                ", powerblock=" + powerBlock +
                 ", mother=" + mother +
                 ", price=" + price +
                 "}\n";
