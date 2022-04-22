@@ -1,46 +1,34 @@
 package computerWarehouse;
 
 public class Computer {
-    private String videocard;
-    private String powerBlock;
-    private String mother;
+    private Components videocard;
+    private Components powerblock;
+    private Components mother;
+    private double price;
 
-    public Computer(String videocard, String powerBlock, String mother) {
+
+    public Computer(){}
+
+    public Computer(VideoCard videocard, PowerBlock powerBlock, Mother mother) {
         this.videocard = videocard;
-        this.powerBlock = powerBlock;
+        this.powerblock = powerBlock;
         this.mother = mother;
+        IEvaluator evaluatorComputer = new EvaluatorComputer();
+        this.price = evaluatorComputer.sum(videocard,powerblock,mother);
     }
 
-    public String getVideocard() {
-        return videocard;
-    }
 
-    public void setVideocard(String videocard) {
-        this.videocard = videocard;
-    }
-
-    public String getPowerBlock() {
-        return powerBlock;
-    }
-
-    public void setPowerBlock(String powerBlock) {
-        this.powerBlock = powerBlock;
-    }
-
-    public String getMother() {
-        return mother;
-    }
-
-    public void setMother(String mother) {
-        this.mother = mother;
+    public double getPrice() {
+        return price;
     }
 
     @Override
     public String toString() {
         return "Computer{" +
-                "videocard='" + videocard + '\'' +
-                ", powerBlock='" + powerBlock + '\'' +
-                ", Mother='" + mother + '\'' +
-                '}';
+                "videocard=" + videocard +
+                ", powerblock=" + powerblock +
+                ", mother=" + mother +
+                ", price=" + price +
+                "}\n";
     }
 }
