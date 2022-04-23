@@ -1,4 +1,4 @@
-package springcore;
+package springcore.nospring;
 
 public class BadWeatherForecastProvider implements WeatherForecastProvider {
     @Override
