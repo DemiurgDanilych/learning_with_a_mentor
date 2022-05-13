@@ -10,7 +10,10 @@ public class SpringCoreProgram3 {
                 new AnnotationConfigApplicationContext(SpringCoreProgram3.class);
 
         Car car = ctx.getBean(Car.class);
+        Car car1 = ctx.getBean(Car.class);
         car.setName("test");
-        System.out.println();
+        car1.setName("Car1");
+        System.out.println(car.getName());
+        System.out.println(car1.getName());
     }
 }

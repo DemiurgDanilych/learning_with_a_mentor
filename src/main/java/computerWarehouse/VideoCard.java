@@ -1,6 +1,6 @@
 package computerWarehouse;
 
-public class VideoCard implements Components {
+public class VideoCard {
     private final String name;
     private final double price;
 
@@ -9,8 +9,6 @@ public class VideoCard implements Components {
         this.price = price;
     }
 
-
-    @Override
     public double getPrice() {
         return price;
     }

@@ -1,6 +1,6 @@
 package computerWarehouse;
 
-public class Mother implements Components {
+public class Mother {
     private final String name;
     private final double price;
 
@@ -9,8 +9,6 @@ public class Mother implements Components {
         this.price = price;
     }
 
-
-    @Override
     public double getPrice() {
         return price;
     }

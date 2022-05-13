@@ -1,20 +1,19 @@
  package computerWarehouse;
 
-public class Computer {
-    private Components videoCard;
-    private Components powerBlock;
-    private Components mother;
+ public class Computer {
+    private VideoCard videoCard;
+    private PowerBlock powerBlock;
+    private Mother mother;
     private double price;
 
 
     public Computer(){}
 
-    public Computer(Components videoCard, Components powerBlock, Components mother) {
+    public Computer(VideoCard videoCard, PowerBlock powerBlock, Mother mother) {
         this.videoCard = videoCard;
         this.powerBlock = powerBlock;
         this.mother = mother;
-        IEvaluator evaluatorComputer = new EvaluatorComputer();
-        this.price = evaluatorComputer.sum(videoCard,powerBlock,mother);
+        this.price = videoCard.getPrice()+powerBlock.getPrice()+ mother.getPrice();
     }
 
 

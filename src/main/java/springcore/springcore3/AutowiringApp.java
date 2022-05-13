@@ -24,10 +24,8 @@ public class AutowiringApp {
         AnnotationConfigApplicationContext ctx =
                 new AnnotationConfigApplicationContext(AutowiringApp.class);
         Radio radio = ctx.getBean(Radio.class);
-        radio.getBatteryInfo();
-
         Phone phone = ctx.getBean(Phone.class);
+        radio.getBatteryInfo();
         phone.getBatteryInfo();
-
     }
 }

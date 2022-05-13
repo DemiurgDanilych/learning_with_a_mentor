@@ -32,5 +32,19 @@ public class Main {
         obj.createObj(response);
         obj.printBidAsk();
     }
+
+    public static class Connection{
+        private final String BaseUrl = "https://www.alphavantage.co/query?";
+        private int connectTimeout;
+        private int readTimeout;
+        private URLConnection connection;
+//        private Function;
+
+        public Connection(int connectTimeout, int readTimeout) {
+
+            this.connectTimeout = connectTimeout;
+            this.readTimeout = readTimeout;
+        }
+    }
 }
 

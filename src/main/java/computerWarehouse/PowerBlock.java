@@ -1,6 +1,6 @@
 package computerWarehouse;
 
-public class PowerBlock implements Components {
+public class PowerBlock {
     private final String name;
     private final double price;
 
@@ -9,8 +9,6 @@ public class PowerBlock implements Components {
         this.price = price;
     }
 
-
-    @Override
     public double getPrice() {
         return price;
     }

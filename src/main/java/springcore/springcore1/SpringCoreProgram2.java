@@ -15,10 +15,10 @@ public class SpringCoreProgram2 {
         return new Processor("Intel i9");
     }
 
-//    @Bean
-//    public Processor getSecondProcessor() {
-//        return new Processor("AMD Ryzen");
-//    }
+    @Bean
+    public Processor getSecondProcessor() {
+        return new Processor("AMD Ryzen");
+    }
 
     @Bean
     public SpringComputer getComputer(Processor processor) {
@@ -32,5 +32,6 @@ public class SpringCoreProgram2 {
 
         SpringComputer computer = ctx.getBean(SpringComputer.class);
         System.out.println(computer.getModel());
+        System.out.println(computer.getProcessor().getName());
     }
 }
