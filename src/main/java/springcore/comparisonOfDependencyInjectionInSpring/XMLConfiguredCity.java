@@ -5,7 +5,7 @@ import springcore.comparisonOfDependencyInjectionInSpring.city.City;
 
 public class XMLConfiguredCity {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContextCity.xml");
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("cityContext/applicationContextCity.xml");
         City city = applicationContext.getBean(City.class);
         System.out.println(city);
     }
